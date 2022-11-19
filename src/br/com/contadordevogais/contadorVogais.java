@@ -22,29 +22,16 @@ public class contadorVogais {
 		
 		String textoCaixaBaixa = textoOriginal.toLowerCase();
 		
-	if (textoCaixaBaixa.length() <= 100) {
+		if (textoCaixaBaixa.length() <= 100) {
 
-		for (char c : textoCaixaBaixa.toCharArray()) {
-			if(VOGAIS.contains(c)) contador++;
+			for (char c : textoCaixaBaixa.toCharArray()) {
+				if(VOGAIS.contains(c)) contador++;
+			}
+
+			System.out.println("O texto digitado contém: " + contador + " vogais.");
+
+		} else {
+			System.out.println("O texto possui: " + textoCaixaBaixa.length() + " caracteres." + " Quantidade não permitida!");
 		}
-		
-		System.out.println("O texto digitado contém: " + contador + " vogais.");
-		
-	} else {
-		System.out.println("O texto possui: " + textoCaixaBaixa.length() + " caracteres." + " Quantidade não permitida!");
-	}
-	}
-	
-	private static boolean contem(char vetor[], char comparacao) {
-		
-		boolean flag = false;
-		
-		for(int i = 0; i < vetor.length; i++) {
-			if (vetor[i] == comparacao)
-				flag = true;
-		}
-		
-		return flag;
-		
 	}
 }
