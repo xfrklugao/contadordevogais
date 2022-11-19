@@ -14,24 +14,23 @@ public class contadorVogais {
 		String texto = lerTexto.nextLine();
 		
 		contaVogais(texto);
-			
 	}
 	
 	private static void contaVogais(String textoOriginal) {
-		int contador = 0;
-		
-		String textoCaixaBaixa = textoOriginal.toLowerCase();
-		
-		if (textoCaixaBaixa.length() <= 100) {
 
-			for (char c : textoCaixaBaixa.toCharArray()) {
-				if(VOGAIS.contains(c)) contador++;
-			}
+		if(textoOriginal == null) return;
 
-			System.out.println("O texto digitado contém: " + contador + " vogais.");
-
-		} else {
-			System.out.println("O texto possui: " + textoCaixaBaixa.length() + " caracteres." + " Quantidade não permitida!");
+		if(textoOriginal.length() > 100) {
+			System.out.println("O texto possui: " + textoOriginal.length() + " caracteres." + " Quantidade não permitida!");
+			return;
 		}
+
+		int contador = 0;
+		String textoCaixaBaixa = textoOriginal.toLowerCase();
+		for (char c : textoCaixaBaixa.toCharArray()) {
+			if(VOGAIS.contains(c)) contador++;
+		}
+
+		System.out.println("O texto digitado contém: " + contador + " vogais.");
 	}
 }
