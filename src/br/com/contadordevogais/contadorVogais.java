@@ -1,8 +1,12 @@
 package br.com.contadordevogais;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class contadorVogais {
+
+	private static final List<Character> VOGAIS = Arrays.asList('a', 'e', 'i','o', 'u');
 
 	public static void main(String[] args) {
 		System.out.println("Digite até 100 caracteres.");
@@ -15,15 +19,13 @@ public class contadorVogais {
 	
 	private static void contaVogais(String texto) {
 		int contador = 0;
-		char vogais[] = {'a', 'e', 'i','o', 'u'};
 		
 		texto.toLowerCase();
 		
-	if (texto.length() <= 100) {	
-		for (int i = 0; i < texto.length(); i++) {
-			char c = texto.charAt(i);
-			if (contem (vogais,c))
-				contador++;
+	if (texto.length() <= 100) {
+
+		for (char c : texto.toCharArray()) {
+			if(VOGAIS.contains(c)) contador++;
 		}
 		
 		System.out.println("O texto digitado contém: " + contador + " vogais.");
