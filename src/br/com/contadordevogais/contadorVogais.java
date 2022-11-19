@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class contadorVogais {
-
+	
 	private static final List<Character> VOGAIS = Arrays.asList('a', 'e', 'i','o', 'u');
 
 	public static void main(String[] args) {
@@ -17,21 +17,21 @@ public class contadorVogais {
 			
 	}
 	
-	private static void contaVogais(String texto) {
+	private static void contaVogais(String textoOriginal) {
 		int contador = 0;
 		
-		texto.toLowerCase();
+		String textoCaixaBaixa = textoOriginal.toLowerCase();
 		
-	if (texto.length() <= 100) {
+	if (textoCaixaBaixa.length() <= 100) {
 
-		for (char c : texto.toCharArray()) {
+		for (char c : textoCaixaBaixa.toCharArray()) {
 			if(VOGAIS.contains(c)) contador++;
 		}
 		
 		System.out.println("O texto digitado contém: " + contador + " vogais.");
 		
 	} else {
-		System.out.println("O texto possui: " + texto.length() + " caracteres." + " Quantidade não permitida!");
+		System.out.println("O texto possui: " + textoCaixaBaixa.length() + " caracteres." + " Quantidade não permitida!");
 	}
 	}
 	
